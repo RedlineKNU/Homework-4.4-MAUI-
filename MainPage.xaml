@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Homework_4._4"
+             x:Class="Homework_4._4.MainPage">
+
+    <VerticalStackLayout Padding="20">
+
+        <HorizontalStackLayout Spacing="10" Margin="10">
+            <Button x:Name="AddProductButton" Text="Додати товар" Clicked="AddProduct"/>
+            <Button x:Name="DeleteProductButton" Text="Видалити товар" Clicked="DeleteProduct"/>
+        </HorizontalStackLayout>
+
+        <CollectionView x:Name="ProductCollectionView" SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal" Padding="5">
+                        <Label Text="{Binding Name}" WidthRequest="150"/>
+                        <Label Text="{Binding Price, StringFormat='UAH'}" WidthRequest="100"/>
+                        <Label Text="{Binding OriginCountry}" WidthRequest="150"/>
+                        <Label Text="{Binding PackagingDate, StringFormat='{0:dd/MM/yyyy}'}" WidthRequest="150"/>
+                        <Label Text="{Binding Description}" WidthRequest="300"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
